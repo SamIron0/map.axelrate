@@ -12,7 +12,7 @@ export default function Home() {
         <h1 class="text-4xl font-bold mb-4">GET INVOLVED</h1>
         <p class="text-lg mb-6">
           No one is coming to save us, we must take responsibility like every
-          nation that has achieved anything great. Leave your email, we'll
+          nation that has achieved anything great. Leave your email, we will
           contact you.
         </p>
         <h1 class="text-4xl font-bold mb-4">WHAT WE BELIEVE</h1>
