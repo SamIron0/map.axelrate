@@ -1,5 +1,5 @@
 import Image from "next/image";
-import L from 'leaflet';
+import L, { GeoJSON } from 'leaflet';
 
 import * as nigeriaBorder from "../nigeriaBorder.json";
 export default function Home() {
