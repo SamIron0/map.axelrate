@@ -12,7 +12,7 @@ export default function Home() {
         maxZoom: 19,
       }).addTo(map);
       var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
-      map.fitBounds(border.getBounds());
+      //map.fitBounds(border.getBounds());
     }
   }, []);
 
