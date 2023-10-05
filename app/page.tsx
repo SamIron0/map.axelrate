@@ -1,4 +1,6 @@
 import Image from "next/image";
+import L from 'leaflet';
+
 import * as nigeriaBorder from "../nigeriaBorder.json";
 export default function Home() {
   let map = L.map("map").setView([9.082, 8.6753], 6);
