@@ -8,10 +8,11 @@ export default function Home() {
     if (typeof window !== "undefined") {
       let L = require('leaflet');
       let map = L.map(mapRef.current).setView([9.082, 8.6753], 6);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
-      var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
+      //var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
       //map.fitBounds(border.getBounds());
     }
   }, []);
