@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <div id="map" ref={mapRef} style={{ height: "500px", width: "100%" }}></div>
+      <div id="map"></div>
       {/* Rest of your code */}
     </main>
   );
