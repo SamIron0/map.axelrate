@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef } from 'react';
 import nigeriaBorder from "../nigeriaBorder.json"
-s
+
 export default function Home() {
 
   useEffect(() => {
