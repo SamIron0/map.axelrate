@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@types/node':
     specifier: 20.6.3
@@ -19,6 +23,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.5.2
     version: 13.5.2(eslint@8.49.0)(typescript@5.2.2)
+  leaflet:
+    specifier: ^1.9.4
+    version: 1.9.4
   next:
     specifier: ^13.5.2
     version: 13.5.2(react-dom@18.2.0)(react@18.2.0)
@@ -1671,6 +1678,10 @@ packages:
     resolution: {integrity: sha512-qJhlO9cGXi6hBGKoxEG/sKZDAHD5Hnu9Hs4WbOY3pCWXDhw0N8x1NenNzm2EnNLkLkk7J2SdxAkDSbb6ftT+UQ==}
     dependencies:
       language-subtag-registry: 0.3.22
+    dev: false
+
+  /leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
     dev: false
 
   /levn@0.4.1:
