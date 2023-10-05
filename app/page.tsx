@@ -18,10 +18,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <>
       <div id="map"></div>
       <div>hello</div>
       {/* Rest of your code */}
-    </main>
+    </>
   );
 }
