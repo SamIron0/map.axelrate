@@ -20,6 +20,7 @@ export default function Home() {
   return (
     <main className="h-500px">
       <div id="map"></div>
+      <div>hello</div>
       {/* Rest of your code */}
     </main>
   );
