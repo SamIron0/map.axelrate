@@ -1,6 +1,12 @@
 import Image from "next/image";
-
+import * as nigeriaBorder from "../nigeriaBorder.json";
 export default function Home() {
+  let map = L.map("map").setView([9.082, 8.6753], 6);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+  }).addTo(map);
+  var border = L.geoJson(nigeriaBorder).addTo(map);
+  map.fitBounds(border.getBounds());
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="p-6">
@@ -12,13 +18,6 @@ export default function Home() {
           got to this mess reserching
         </p>
 
-        <iframe
-          width="425"
-          height="350"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=0.13183593750000003%2C-0.7031073524364783%2C16.259765625000004%2C20.24158281954221&amp;layer=mapnik"
-          style={{ border: "1px solid black" }}
-          
-        ></iframe>
         <br />
         <small>
           <a href="https://www.openstreetmap.org/#map=6/9.936/8.196">
