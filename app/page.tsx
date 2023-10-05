@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main className="height:500px">
       <div id="map"></div>
       {/* Rest of your code */}
     </main>
