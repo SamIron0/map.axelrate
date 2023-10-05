@@ -1,14 +1,20 @@
 import Image from "next/image";
 import L, { GeoJSON } from 'leaflet';
-
+import {useEffect} from 'react';
 import * as nigeriaBorder from "../nigeriaBorder.json";
 export default function Home() {
-  let map = L.map("map").setView([9.082, 8.6753], 6);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-  }).addTo(map);
-  var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
-  map.fitBounds(border.getBounds());
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let map = L.map("map").setView([9.082, 8.6753], 6);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+      }).addTo(map);
+      var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
+      map.fitBounds(border.getBounds());
+    }
+  }
+  )
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="p-6">
@@ -21,12 +27,9 @@ export default function Home() {
         </p>
 
         <br />
-        <small>
-          <a href="https://www.openstreetmap.org/#map=6/9.936/8.196">
-            View Larger Map
-          </a>
-        </small>
+
       </div>
     </main>
   );
+
 }
