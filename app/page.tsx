@@ -7,7 +7,7 @@ export default function Home() {
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
   }).addTo(map);
-  var border = L.geoJson(nigeriaBorder).addTo(map);
+  var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
   map.fitBounds(border.getBounds());
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
