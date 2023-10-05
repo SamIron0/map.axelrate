@@ -12,8 +12,8 @@ export default function Home() {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
-      //var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
-      //map.fitBounds(border.getBounds());
+      var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
+      map.fitBounds(border.getBounds());
     }
   }, []);
 
