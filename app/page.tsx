@@ -16,7 +16,8 @@ export default function Home() {
           width="425"
           height="350"
           src="https://www.openstreetmap.org/export/embed.html?bbox=0.13183593750000003%2C-0.7031073524364783%2C16.259765625000004%2C20.24158281954221&amp;layer=mapnik"
-          style="border: 1px solid black"
+          style={{ border: "1px solid black" }}
+          
         ></iframe>
         <br />
         <small>
