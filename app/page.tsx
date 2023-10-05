@@ -9,7 +9,7 @@ export default function Home() {
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
   }).addTo(map);
-  var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
+  var border = L.geoJson(nigeriaBorder).addTo(map);
   map.fitBounds(border.getBounds());
 
 
