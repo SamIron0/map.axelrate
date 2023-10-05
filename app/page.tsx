@@ -1,13 +1,12 @@
 "use client"
 import { useEffect, useRef } from 'react';
 import nigeriaBorder from "../nigeriaBorder.json"
-import * as L from 'leaflet'
-
+s
 export default function Home() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-     // let L = require('leaflet');
+      let L = require('leaflet');
       let map = L.map('map').setView([9.082, 8.6753], 6);
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
