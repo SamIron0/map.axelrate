@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,9 +25,10 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        
+        <Script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-          crossOrigin=""></script>
+          crossOrigin=""></Script>
       </body>
     </html>
   );
