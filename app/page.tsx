@@ -1,27 +1,28 @@
-"use client"
-import { useEffect, useRef } from 'react';
-import nigeriaBorder from "../nigeriaBorder.json"
+"use client";
+import { useEffect, useRef } from "react";
+import nigeriaBorder from "../nigeriaBorder.json";
 
 export default function Home() {
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      let L = require('leaflet');
-      var map = L.map('map').setView([51.505, -0.09], 13);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-      var border = L.geoJson(nigeriaBorder as GeoJSON.FeatureCollection).addTo(map);
-      map.fitBounds(border.getBounds());
-    }
-  }, []);
+  const position = [51.505, -0.09]
 
   return (
     <>
-      <div id="map"></div>
-      <div>hello</div>
-      {/* Rest of your code */}
+      <MapContainer
+        style={{ height: 500 }}
+        center={position}
+        zoom={13}
+        scrollWheelZoom={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
     </>
   );
 }
