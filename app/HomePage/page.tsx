@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
         mapId="MapTest"
         lat={9.0820}
         lng={8.6753}
-        zoom={8}
+        zoom={6}
         height={height}
         markers={mapMarkers}
       />

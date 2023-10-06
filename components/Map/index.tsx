@@ -21,9 +21,9 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
       maxBounds: [
-        [3, 2],
+        [4.2776, 2.668],
         // Southwest coordinates
-       [16, 15]
+       [13.892, 14.680]
       ]
     });
 
