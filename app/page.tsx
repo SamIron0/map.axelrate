@@ -1,15 +1,19 @@
 "use client";
 import { useEffect, useRef } from "react";
 import nigeriaBorder from "../nigeriaBorder.json";
+import { MapContainer } from 'react-leaflet/MapContainer'
+import { TileLayer } from "react-leaflet/TileLayer";
+import { Marker } from "react-leaflet/Marker";
+import { Popup } from "react-leaflet/Popup";
+
+
 
 export default function Home() {
-  const position = [51.505, -0.09]
-
   return (
     <>
       <MapContainer
         style={{ height: 500 }}
-        center={position}
+        center={[51.505, -0.09]}
         zoom={13}
         scrollWheelZoom={false}
       >
@@ -17,7 +21,7 @@ export default function Home() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
+        <Marker position={[51.505, -0.09]}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
