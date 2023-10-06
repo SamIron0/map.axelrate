@@ -12,13 +12,13 @@ const HomePage: React.FC = () => {
     <Container>
       <Map
         mapId="MapTest"
-        lat={-22.84408190473907}
-        lng={-46.937304740830086}
-        zoom={9}
+
+        lat={9.0820}
+        lng={8.6753} zoom={9}
         height="600px"
         markers={mapMarkers}
       />
-     
+
 
     </Container>
   );
