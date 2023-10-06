@@ -12,9 +12,9 @@ const HomePage: React.FC = () => {
     <Container>
       <Map
         mapId="MapTest"
-
         lat={9.0820}
-        lng={8.6753} zoom={9}
+        lng={8.6753} 
+        zoom={0}
         height="600px"
         markers={mapMarkers}
       />

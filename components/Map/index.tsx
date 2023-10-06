@@ -34,6 +34,10 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
           return true;
         });
       }
+      map.fitBounds([
+        [4.2776, 2.668], // Southwest coordinates
+        [13.892, 14.680]
+      ])
     });
 
     map.on('click', (e) => {
@@ -100,7 +104,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
     <Container>
       <CustomMap id={mapId} width={width} height={height} />
 
-      
+
     </Container>
   );
 };
