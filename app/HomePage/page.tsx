@@ -10,7 +10,6 @@ const HomePage: React.FC = () => {
 
   return (
     <Container>
-      <h1>Mapbox - React / NextJS working example</h1>
       <Map
         mapId="MapTest"
         lat={-22.84408190473907}

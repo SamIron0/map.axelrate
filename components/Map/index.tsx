@@ -87,30 +87,20 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
   );
 
   return (
-    <Container>
-      <ClickCoordinatesContainer>
-        <p>
-          Click on the map to add a marker and see the coordinates:
-          <br />
-          {clickCoordinates.lat}
-          <small>x</small>
-          {clickCoordinates.lng}
-        </p>
-      </ClickCoordinatesContainer>
 
+    /* 
+       <ClickCoordinatesContainer>
+         <p>
+                     <br />
+           {clickCoordinates.lat}
+           <small>x</small>
+           {clickCoordinates.lng}
+         </p>
+       </ClickCoordinatesContainer>*/
+    <Container>
       <CustomMap id={mapId} width={width} height={height} />
 
-      <div>
-        <button type="button" onClick={() => changeMapZoom(mapZoom - 1)}>
-          Zoom (-)
-        </button>
-        <button type="button" onClick={() => changeMapZoom(mapZoom + 1)}>
-          Zoom (+)
-        </button>
-        <button type="button" onClick={() => setMapCoordinates({ lat, lng })}>
-          Reset map center
-        </button>
-      </div>
+      
     </Container>
   );
 };
