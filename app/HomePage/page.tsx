@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
         lat={9.0820}
         lng={8.6753}
         zoom={5}
-        height="720px"
+        height="660px"
         markers={mapMarkers}
       />
 
