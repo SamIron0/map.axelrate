@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setHeight(window.innerWidth === 640 ? '660px' : '900px');
+      setHeight(window.innerWidth < 740 ? '660px' : '900px');
     }
   }, []);
 
@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
         mapId="MapTest"
         lat={9.0820}
         lng={8.6753}
-        zoom={5}
+        zoom={8}
         height={height}
         markers={mapMarkers}
       />
