@@ -9,12 +9,12 @@ const HomePage: React.FC = () => {
   const [mapMarkers, setMapMarkers] = useState<Array<MarkerType> | undefined>(undefined);
 
   const [height, setHeight] = useState('700px');
-  const [zoom, setZoom] = useState(6);
+  const [zoom, setZoom] = useState(5);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setHeight(window.innerWidth < 740 ? '660px' : '900px');
-      setZoom(window.innerWidth < 740 ? 6 : 8);
+      setHeight(window.innerWidth < 640 ? '660px' : '900px');
+      setZoom(window.innerWidth < 640 ? 6 : 8);
     }
   }, []);
 

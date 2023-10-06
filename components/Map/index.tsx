@@ -30,7 +30,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
     map.on('load', () => {
       setMapInstance(map);
 
-      map.resize();
+     // map.resize();
 
       // possible markers
       if (markers) {
@@ -43,12 +43,12 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
     });
 
     map.on('click', (e) => {
-      setClickCoordinates({
+    /*  setClickCoordinates({
         lat: e.lngLat.lat,
         lng: e.lngLat.lng,
       });
 
-      new mapboxgl.Marker().setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(map);
+      new mapboxgl.Marker().setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(map);*/
     });
 
     /* 
