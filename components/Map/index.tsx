@@ -20,6 +20,10 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
+      maxBounds: [
+        [4.2776, 2.668],
+        [13.892, 14.680]
+      ]
     });
 
     map.on('load', () => {
@@ -34,10 +38,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
           return true;
         });
       }
-      map.fitBounds([
-        [4.2776, 2.668], // Southwest coordinates
-        [13.892, 14.680]
-      ])
+
     });
 
     map.on('click', (e) => {
