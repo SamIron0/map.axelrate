@@ -30,7 +30,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
     map.on('load', () => {
       setMapInstance(map);
 
-     // map.resize();
+      map.resize();
 
       // possible markers
       if (markers) {
