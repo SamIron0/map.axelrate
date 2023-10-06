@@ -17,12 +17,13 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapId,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/0x0x0x/clne1kfe1005601ps47vafxoy',
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
       maxBounds: [
-        [1,4],
-        [15, 14.2]
+        [4, 2],
+        // Southwest coordinates
+       [14, 15]
       ]
     });
 
