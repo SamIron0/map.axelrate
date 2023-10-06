@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import nigeriaBorder from "../nigeriaBorder.json";
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from "react-leaflet/TileLayer";
