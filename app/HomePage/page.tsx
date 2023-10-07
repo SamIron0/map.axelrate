@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setHeight(window.innerWidth < 650 ? '660px' : '900px');
-      setZoom(window.innerWidth < 650 ? 3 : 5);
+      setZoom(window.innerWidth < 650 ? 1 : 1);
     }
   }, []);
 
