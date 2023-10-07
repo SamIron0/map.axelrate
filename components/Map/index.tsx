@@ -21,9 +21,9 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
       maxBounds: [
-        [4.2776, 2.668],
+        [2.668, 4.2776],
         // Southwest coordinates
-       [13.892, 14.680]
+        [14.680, 13.892]
       ]
     });
 
@@ -43,12 +43,12 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
     });
 
     map.on('click', (e) => {
-    /*  setClickCoordinates({
-        lat: e.lngLat.lat,
-        lng: e.lngLat.lng,
-      });
-
-      new mapboxgl.Marker().setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(map);*/
+      /*  setClickCoordinates({
+          lat: e.lngLat.lat,
+          lng: e.lngLat.lng,
+        });
+  
+        new mapboxgl.Marker().setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(map);*/
     });
 
     /* 
