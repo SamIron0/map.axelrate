@@ -34,7 +34,6 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
           return true;
         });
       }
-
       if (map.isStyleLoaded()) {
         map.addSource('nigeria', {
           type: 'geojson',
