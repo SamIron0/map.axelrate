@@ -20,7 +20,6 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       style: 'mapbox://styles/0x0x0x/clne1kfe1005601ps47vafxoy',
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
-
     });
 
     map.on('load', () => {
@@ -36,12 +35,11 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
         });
       }
 
+      map.addSource('nigeria', {
+        type: 'geojson',
+        data: '././nigeria-boundary.geojson'
+      });
     });
-    map.addSource('nigeria', {
-      type: 'geojson',
-      data: '././nigeria-boundary.geojson'
-    });
-
     // Use the GeoJSON source to create a new line layer
     map.addLayer({
       id: 'nigeria-border',
