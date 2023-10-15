@@ -35,17 +35,24 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
         });
       }
 
-    
-    });
-    // Use the GeoJSON source to create a new line layer
-    map.addLayer({
-      id: 'nigeria-border',
-      type: 'line',
-      source: 'nigeria',
-      layout: {},
-      paint: {
-        'line-color': '#FF0000', // red line color
-        'line-width': 3
+      if (map.isStyleLoaded()) {
+        map.addSource('nigeria', {
+          type: 'geojson',
+          data: '././nigeria-boundary.geojson'
+        });
+
+        // Use the GeoJSON source to create a new line layer
+        map.addLayer({
+          id: 'nigeria-border',
+          type: 'line',
+          source: 'nigeria',
+          layout: {},
+          paint: {
+            'line-color': '#FF0000', // red line color
+            'line-width': 3
+          }
+        });
+
       }
     });
 
