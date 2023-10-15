@@ -20,11 +20,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       style: 'mapbox://styles/0x0x0x/clne1kfe1005601ps47vafxoy',
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
-      maxBounds: [
-        [2.668, 4.2776],
-        // Southwest coordinates
-        [14.680, 13.892]
-      ]
+      
     });
 
     map.on('load', () => {
