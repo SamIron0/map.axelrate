@@ -20,7 +20,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       style: 'mapbox://styles/0x0x0x/clne1kfe1005601ps47vafxoy',
       center: [mapCoordinates.lng, mapCoordinates.lat],
       zoom: mapZoom,
-      
+
     });
 
     map.on('load', () => {
@@ -37,13 +37,30 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       }
 
     });
+    map.addSource('nigeria', {
+      type: 'geojson',
+      data: './nigeria.geojson'
+    });
+
+    // Use the GeoJSON source to create a new line layer
+    map.addLayer({
+      id: 'nigeria-border',
+      type: 'line',
+      source: 'nigeria',
+      layout: {},
+      paint: {
+        'line-color': '#FF0000', // red line color
+        'line-width': 3
+      }
+    });
+
 
     map.on('click', (e) => {
       /*  setClickCoordinates({
           lat: e.lngLat.lat,
           lng: e.lngLat.lng,
         });
-  
+     
         new mapboxgl.Marker().setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(map);*/
     });
 
