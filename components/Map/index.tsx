@@ -13,6 +13,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
   const [mapZoom, setMapZoom] = useState(zoom);
   const [mapCoordinates, setMapCoordinates] = useState({ lat, lng });
 
+  
   // # Start the map
   useEffect(() => {
     const map = new mapboxgl.Map({
