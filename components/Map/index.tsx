@@ -38,7 +38,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       if (map.isStyleLoaded()) {
         map.addSource('nigeria', {
           type: 'geojson',
-          data: '././nigeriaBorder.json'
+          data: '../../nigeria-boundary.geojson'
         });
 
         // Use the GeoJSON source to create a new line layer
