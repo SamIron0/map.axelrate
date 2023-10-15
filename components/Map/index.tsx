@@ -38,7 +38,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
       if (map.isStyleLoaded()) {
         map.addSource('nigeria', {
           type: 'geojson',
-          data: '././nigeria-boundary.geojson'
+          data: '././nigeriaBorder.json'
         });
 
         // Use the GeoJSON source to create a new line layer
@@ -58,19 +58,7 @@ const Map: React.FC<IMap> = ({ mapId, width, height, lng, lat, zoom, markers }) 
 
 
     map.on('click', (e) => {
-      /*  setClickCoordinates({
-          lat: e.lngLat.lat,
-          lng: e.lngLat.lng,
-        });
-     
-        new mapboxgl.Marker().setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(map);*/
     });
-
-    /* 
-    The idea is to execute the useEffect only once (when DOM is ready).
-    If any other map props are updated, there are "listeners" for every one of them
-  */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // # Marker Listener
