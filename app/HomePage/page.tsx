@@ -10,6 +10,8 @@ const HomePage: React.FC = () => {
 
   const [height, setHeight] = useState('700px');
   const [zoom, setZoom] = useState(5);
+  const [region, setRegion] = useState("");
+  const [locationFetched, setLocationFetched] = useState(false); // New state variable
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -18,6 +20,35 @@ const HomePage: React.FC = () => {
     }
   }, []);
 
+
+  const fetchLocation = async () => {
+    try {
+      const res = await fetch('/api/getLocation');
+      if (res.status === 200) { // valid response
+        const data = await res.json();
+        setRegion(data.location.region_name);
+        // console.log(data.location.region_name);
+        setLocationFetched(true); // Mark location as fetched
+      } else {
+        console.error("An error occurred while fetching the location");
+      }
+    } catch (error) {
+      console.error("An error occurred while fetching the location:", error);
+    }
+  };
+
+
+  useEffect(() => {
+    if (!locationFetched) {
+      // Fetch location only if it hasn't been fetched yet
+      fetchLocation();
+    } else {
+      // Fetch data only when location has been fetched
+
+    }
+  }, [locationFetched]);
+
+  console.log(region);
   return (
     <Container>
 
