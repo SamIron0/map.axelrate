@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import Modal from 'react-modal';
 
 import Map from '../../components/Map';
 
