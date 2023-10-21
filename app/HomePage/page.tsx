@@ -63,10 +63,10 @@ const HomePage: React.FC = () => {
     setIsOpen(false);
   }
 
-  console.log(region);
+  //console.log(region);
 
   return (
-    <>
+    <div id="root">
 
 
       <Modal
@@ -106,7 +106,7 @@ const HomePage: React.FC = () => {
 
 
       </Container>
-    </>
+    </div>
   );
 };
 
