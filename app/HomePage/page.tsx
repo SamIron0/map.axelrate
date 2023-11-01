@@ -7,7 +7,7 @@ import { Container } from './styles';
 interface VideoProps {
   videoStyles: React.CSSProperties;
 }
-const HomePage: React.FC<VideoProps> = ({ videoStyles }) => {
+const HomePage: React.FC = () => {
   const [mapMarkers, setMapMarkers] = useState<Array<MarkerType> | undefined>(undefined);
 
   const [height, setHeight] = useState('700px');
@@ -124,7 +124,7 @@ const HomePage: React.FC<VideoProps> = ({ videoStyles }) => {
 
       </Container>
       <div>
-        <video ref={videoStream} style={videoStyles} muted />
+        <video ref={videoStream} muted />
         <button onClick={startCapture}>Start Capture</button>
       </div>
     </div>
