@@ -1,12 +1,13 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Modal from 'react-modal';
-
 import Map from '../../components/Map';
 
 import { Container } from './styles';
-
-const HomePage: React.FC = () => {
+interface VideoProps {
+  videoStyles: React.CSSProperties;
+}
+const HomePage: React.FC<VideoProps> = ({ videoStyles }) => {
   const [mapMarkers, setMapMarkers] = useState<Array<MarkerType> | undefined>(undefined);
 
   const [height, setHeight] = useState('700px');
@@ -17,6 +18,22 @@ const HomePage: React.FC = () => {
 
 
   Modal.setAppElement('#root');
+
+  const videoStream = useRef<HTMLVideoElement>(null);
+
+  const startCapture = async () => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        if (videoStream.current) {
+          videoStream.current.srcObject = stream;
+          videoStream.current.play();
+        }
+      } catch (error) {
+        console.error("Error accessing media devices.", error);
+      }
+    }
+  }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -106,6 +123,10 @@ const HomePage: React.FC = () => {
 
 
       </Container>
+      <div>
+        <video ref={videoStream} style={videoStyles} muted />
+        <button onClick={startCapture}>Start Capture</button>
+      </div>
     </div>
   );
 };
