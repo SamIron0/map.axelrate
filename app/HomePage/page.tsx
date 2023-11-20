@@ -70,9 +70,9 @@ const HomePage: React.FC = () => {
   return (
     <div id="root">
       <div
-        className='w-9.5/10 justify-center mt-6'>
+        className='justify-center mt-6'>
         <div
-          className='w-full rounded-md'>
+          className=''>
           <Map
             mapId="MapTest"
             lat={9.0820}

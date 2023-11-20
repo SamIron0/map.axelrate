@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  width: 90%;
+  width: 50%;
 `;
 
 export const CustomMap = styled.div<ICustomMap>`${({ width, height }) => css`
