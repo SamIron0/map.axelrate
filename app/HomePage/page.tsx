@@ -90,7 +90,7 @@ const HomePage: React.FC = () => {
           />
         </div>
         <div
-          className="w-full"
+          className="w-full flex justify-center"
         >
           <button
             onClick={handleCameraButtonClick}
