@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
   const [locationFetched, setLocationFetched] = useState(false); // New state variable
   const [modalIsOpen, setIsOpen] = useState(false);
 
-
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   Modal.setAppElement('#root');
 
   useEffect(() => {
@@ -63,17 +63,21 @@ const HomePage: React.FC = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  function OpenCamera() {
+  const handleCameraButtonClick = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
-
-  }
-
-  //console.log(region);
-
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+      }
+    } catch (error) {
+      console.error('Error accessing camera:', error);
+    }
+  };
   return (
     <div id="root">
       <div
-       className='w-9.5/10 justify-center mt-6'>
+        className='w-9.5/10 justify-center mt-6'>
         <div
           className='w-full rounded-md'>
           <Map
@@ -88,15 +92,15 @@ const HomePage: React.FC = () => {
         <div
           className="w-full"
         >
-          <Link
-            href="/CameraPage"
+          <button
+            onClick={handleCameraButtonClick}
             className="text-black bg-white mt-3 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
           >
             POST
             <svg className="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
-          </Link>
+          </button>
         </div>
 
 
