@@ -10,7 +10,9 @@ interface VideoProps {
 const HomePage: React.FC = () => {
   const [mapMarkers, setMapMarkers] = useState<Array<MarkerType> | undefined>(undefined);
 
+
   const [height, setHeight] = useState('700px');
+  const [width, setWidth] = useState('9/10');
   const [zoom, setZoom] = useState(5);
   const [region, setRegion] = useState("");
   const [locationFetched, setLocationFetched] = useState(false); // New state variable
@@ -79,6 +81,7 @@ const HomePage: React.FC = () => {
             lng={8.6753}
             zoom={zoom}
             height={height}
+            width={width}
             markers={mapMarkers}
           />
         </div>
