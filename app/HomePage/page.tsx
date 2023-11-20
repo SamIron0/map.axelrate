@@ -93,7 +93,7 @@ const HomePage: React.FC = () => {
             onChange={(event: ChangeEvent<HTMLInputElement>) => handleCapture(event.target)}
           />
           );
-}
+
         </div>
 
 
