@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
   return (
     <div id="root">
       <div
-        className='justify-center mt-6'>
+        className='justify-center m-6'>
         <div
           className=''>
           <Map
