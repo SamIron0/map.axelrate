@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Video, CaptureButton } from './styles';
 
-const App: React.FC = () => {
+function CameraPage(){
 
 
   const videoStream = useRef<HTMLVideoElement>(null);
@@ -31,4 +31,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default CameraPage;
